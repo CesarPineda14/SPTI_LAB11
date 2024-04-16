@@ -39,12 +39,6 @@ app.listen(3000, () => {
     console.log('Servidor ejecutándose en http://localhost:3000');
 });
 
-// Uso inseguro de recursos de criptografía
-const crypto = require('crypto');
-const insecureHashFunction = crypto.createHash('md5');
 
-// Uso inseguro de headers, susceptible a ataques como clickjacking
-app.use((req, res, next) => {
-    res.setHeader('X-Frame-Options', 'ALLOW-FROM http://example.com/');
-    next();
-});
+
+
