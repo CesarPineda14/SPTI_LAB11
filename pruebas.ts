@@ -11,7 +11,8 @@ app.get('/', (req, res) => {
         // Solo permitir caracteres alfanuméricos para evitar inyección
         const safeParam = param.replace(/[^a-z0-9]/gi, '');
         console.log(safeParam);
-        res.send(`Parámetro seguro recibido: ${safeParam}`);
+        // Envía una respuesta genérica en lugar de reflejar el parámetro
+        res.send('Parámetro recibido y procesado de forma segura.');
     } else {
         res.status(400).send('Parámetro inválido');
     }
