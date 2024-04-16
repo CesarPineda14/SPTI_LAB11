@@ -1,8 +1,9 @@
 // Ejemplo vulnerable de código TypeScript
 
 import express from 'express';
+import helmet from 'helmet';
 const app = express();
-
+app.use(helmet());
 // Ejemplo de inyección de código mediante entrada del usuario
 app.get('/', (req, res) => {
     let param = req.query.param;
